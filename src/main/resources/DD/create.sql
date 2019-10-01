@@ -3,7 +3,7 @@ SET MODE PostgreSQL;
 CREATE DATABASE news_portal;
 \c news_portal;
 
-CREATE TABLE Department (
+CREATE TABLE department (
  id SERIAL PRIMARY KEY,
  Depart_name VARCHAR,
  numberOfEmployees VARCHAR,
@@ -19,7 +19,7 @@ CREATE TABLE UserInCompany (
 );
 
 
-CREATE TABLE Department_UserInCompany (
+CREATE TABLE DEpartment_userInCompany (
  id SERIAL PRIMARY KEY,
  Departmentid INTEGER,
  UserInCompanyid INTEGER
