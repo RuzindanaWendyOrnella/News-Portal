@@ -1,0 +1,38 @@
+{{#partial "content"}}
+
+   <br><br><br><br><br><br>
+    <form style="background-color:black;color:black;opacity:0.7;text-align:center" action="/posts" method="post">
+        <h1 style="padding-top:1%;color:black">User</h1>
+        <label for="name" style="color:white">  Name</label><br>
+        <input id="name" style="color:black" name="name" type="text"><br>
+        <label for="positionincompany" style="color:white">Position</label><br>
+        <input id="positionincompany" style="color:black" name="positionincompany" type="text"><br>
+     <label for="role" style="color:white">role</label><br>
+        <input id="role" name="role" style="color:black" type="text"><br>
+        <select style="color:black" id="departmentId" name="departmentid">
+            {{#each contain}}
+                <option value={{id}}>{{depart_name}}</option>
+
+            {{/each}}
+        </select>
+        <button type="submit" class="btn btn-default" >Add</button><br>
+    </form>
+
+   <!-- <br><br><br><br><br><br>
+    <form style="background-color:black;color:black;opacity:0.7;text-align:center" action="/posts" method="post">
+        <h1 style="padding-top:1%;color:white">Department</h1>
+        <label for="depart_name" style="color:white">  Department Name</label><br>
+        <input id="depart_name" style="color:black" name="depart_name" type="text"><br>
+        <label for="description" style="color:white">Description</label><br>
+        <input id="description" style="color:black" name="description" type="text"><br>
+        &lt;!&ndash;<label for="role" style="color:white">role</label><br>
+        <input id="role" name="role" style="color:black" type="text"><br>&ndash;&gt;
+
+        <button type="submit" class="btn btn-default" >Add</button><br>
+    </form>-->
+    <style>
+
+    </style>
+{{/partial}}
+
+{{> layout.hbs}}
