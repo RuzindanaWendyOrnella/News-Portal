@@ -65,6 +65,6 @@ public class DepartmentTest {
     public void setId() {
         Department testDepartment= setupDepartment();
         testDepartment.setId(2);
-        assertNotEquals(0,  testDepartment.getId());
+        assertNotEquals(7,  testDepartment.getId());
     }
 }
