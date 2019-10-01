@@ -1,0 +1,23 @@
+{{#partial "content"}}
+
+     <div style="background:white;opacity:0.7">
+
+         {{#if contain}}
+
+             {{#each contain}}
+
+                 <h1 style="color:black">Current post:</h1>
+                 <p style="color:black">Name: {{ depart_name }}</p>
+                 <p style="color:black">Position: {{ description }}</p>
+                 <!-- <p style="color:black">Role: {{ role }}</p>-->
+
+             {{/each}}
+         {{else}}
+             <p>No department!</p>
+
+         {{/if}}
+
+        </div>
+{{/partial}}
+
+{{> layout.hbs}}
