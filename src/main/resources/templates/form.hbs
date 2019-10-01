@@ -1,0 +1,49 @@
+{{#partial "content"}}
+
+    <h1 style="color:white">user list!</h1>
+    <div style="text-align:center">
+        <div style="background:white;opacity:0.7">
+
+
+            {{#if danger}}
+
+                {{#each danger}}
+
+                    <h1 style="color:black">Current post:</h1>
+                    <p style="color:black">Name: {{ name }}</p>
+                    <p style="color:black">Position: {{ positionincompany }}</p>
+                    <p style="color:black">Role: {{ role }}</p>
+                    <p style="color:black">Role: {{ departmentid }}</p>
+                {{/each}}
+            {{else}}
+                <p>No user!</p>
+
+            {{/if}}
+
+        </div>
+        <div style="background:white;opacity:0.7">
+
+
+           <!-- {{#if contain}}
+
+                {{#each contain}}
+
+                    <h1 style="color:black">Current post:</h1>
+                    <p style="color:black">Name: {{ depart_name }}</p>
+                    <p style="color:black">Position: {{ description }}</p>
+                   &lt;!&ndash; <p style="color:black">Role: {{ role }}</p>&ndash;&gt;
+
+                {{/each}}
+            {{else}}
+                <p>No department!</p>
+
+            {{/if}}-->
+
+        </div>
+    <style>
+
+    </style>
+    </div>
+{{/partial}}
+
+{{> layout.hbs}}
