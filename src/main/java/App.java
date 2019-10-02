@@ -3,6 +3,7 @@ import Dao.Sql2oUserDao;
 import Dao.UserDao;
 import com.google.gson.Gson;
 import models.Department;
+import models.GeneralNews;
 import models.User;
 import org.sql2o.Connection;
 import org.sql2o.Sql2o;
@@ -29,12 +30,14 @@ public class App {
         departmentDao = new Sql2oDepartmentDao(sql2o);
         userDao = new Sql2oUserDao(sql2o);
         conn = sql2o.open();
-        get("/", (req, res) -> {
+        get("/come", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             /*List<Department> contain =Sql2oDepartmentDao.getAll();
             model.put(" contain",  contain);*/
             return new ModelAndView(model, "index.hbs");
+
         }, new HandlebarsTemplateEngine());
+
         get("/posts2", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             /*List<Department> contain =Sql2oDepartmentDao.getAll();
@@ -46,6 +49,7 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String  depart_name = request.queryParams("depart_name");
             String description = request.queryParams("description");
+
             /*int departmentid=Integer.parseInt(request.queryParams("departmentid"));*/
           /* int numberOfEmployees = request.queryParams("numberOfEmployees");*/
             Department department=new Department(depart_name,description);
@@ -73,8 +77,9 @@ public class App {
             String name =request.queryParams("name");
             String positionincompany= request.queryParams("positionincompany");
             String role = request.queryParams("role");
-            /*int departmentid=Integer.parseInt(request.params("departmentid"));*/
-            User newPost = new User(name,positionincompany,role);
+            String departmentid=request.queryParams("departmentid");
+           System.out.println(departmentid);
+            User newPost = new User(name,positionincompany,role,departmentid);
             model.put("post", newPost);
             newPost.save();
             return new ModelAndView(model, "success2.hbs");
@@ -83,9 +88,37 @@ public class App {
         get("/here", (req, res) -> {
             Map<String, Object> model = new HashMap<>();
             List<User> danger = Sql2oUserDao.getAll();
-            System.out.println(danger);
+
             model.put("danger", danger);
             return new ModelAndView(model, "form.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/general", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            /*List<Department> contain =Sql2oDepartmentDao.getAll();
+            model.put(" contain",  contain);*/
+            return new ModelAndView(model, "newpost-form3.hbs");
+
+        }, new HandlebarsTemplateEngine());
+
+
+        post("/general", (request, response) -> { //URL to make new post on POST route
+            Map<String, Object> model = new HashMap<>();
+            String  content = request.queryParams("content");
+            String about = request.queryParams("about");
+            String author = request.queryParams("author");
+            /*int departmentid=Integer.parseInt(request.queryParams("departmentid"));*/
+            /* int numberOfEmployees = request.queryParams("numberOfEmployees");*/
+            GeneralNews general=new GeneralNews(content,about,author);
+            general.save();
+            model.put("general",general);
+
+            return new ModelAndView(model, "general.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            List<GeneralNews> gen =GeneralNews.all();
+            model.put("gen",  gen);
+            return new ModelAndView(model, "form3.hbs");
         }, new HandlebarsTemplateEngine());
       /*  //CREATE
         post("/departments/:departmentId/user/:userId", "application/json", (req, res) -> {

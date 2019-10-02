@@ -8,12 +8,16 @@
             {{#if danger}}
 
                 {{#each danger}}
-
+                <div class="modal-dialog cascading-modal" role="document">
+                <div class="modal-content">
                     <h1 style="color:black">Current post:</h1>
                     <p style="color:black">Name: {{ name }}</p>
                     <p style="color:black">Position: {{ positionincompany }}</p>
                     <p style="color:black">Role: {{ role }}</p>
-                    <p style="color:black">Role: {{ departmentid }}</p>
+
+               <p style="color:black">departmentid: {{ departmentid }}</p>
+                </div>
+                </div>
                 {{/each}}
             {{else}}
                 <p>No user!</p>

@@ -7,12 +7,12 @@ import java.util.Objects;
 public class User {
     private String name;
     private String positionincompany;
- /*   private int departmentId;*/
+    private int departmentId;
     private String role;
     private int id;
-    private int departmentid;
+    private String departmentid;
 
-    public User(String name,String positionincompany,String role ){
+    public User(String name,String positionincompany,String role ,String departmentid){
         this.name=name;
         this.positionincompany=positionincompany;
         this.role=role;
@@ -33,7 +33,7 @@ public class User {
         this.role = role;
     }
 
-    public int getDepartmentid() {
+    public String getDepartmentid() {
         return departmentid;
     }
 
@@ -45,9 +45,9 @@ public class User {
         this.positionincompany = positionincompany;
     }
 
-    /*  public int getDepartmentId(){
+    public int getDepartmentId(){
             return departmentId;
-        }*/
+        }
     public int getId(){
         return id;
     }
