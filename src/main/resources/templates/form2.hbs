@@ -8,9 +8,12 @@
              <div class="modal-dialog cascading-modal" role="document">
              <div class="modal-content">
                  <h1 style="color:black">Current Department:</h1>
-                 <p style="color:black">Name: {{ depart_name }}</p>
-                 <p style="color:black">Position: {{ description }}</p>
-                 <!-- <p style="color:black">Role: {{ role }}</p>-->
+                 <h1 style="color:black;font-style:oblique;font-family:sans-serif">Name</h1>
+                 <p> {{ depart_name }}</p>
+                 <h1 style="color:black;font-style:oblique;font-family:sans-serif">Position</h1>
+                 <p>{{ description }}</p>
+                 <h1 style="color:black;font-style:oblique;font-family:sans-serif">News </h1>
+                 <p>{{ depart_news }}</p>
              </div>
              </div>
              {{/each}}

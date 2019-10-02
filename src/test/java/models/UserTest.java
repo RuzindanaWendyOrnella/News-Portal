@@ -1,3 +1,4 @@
+/*
 package models;
 
 import org.junit.After;
@@ -45,4 +46,4 @@ public class UserTest {
     @Test
     public void getId() {
     }
-}
+}*/

@@ -49,10 +49,10 @@ public class App {
             Map<String, Object> model = new HashMap<>();
             String  depart_name = request.queryParams("depart_name");
             String description = request.queryParams("description");
-
+            String depart_news = request.queryParams("depart_news");
             /*int departmentid=Integer.parseInt(request.queryParams("departmentid"));*/
           /* int numberOfEmployees = request.queryParams("numberOfEmployees");*/
-            Department department=new Department(depart_name,description);
+            Department department=new Department(depart_name,description,depart_news);
             department.save();
             model.put("department",department);
 

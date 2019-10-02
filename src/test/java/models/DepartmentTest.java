@@ -1,3 +1,4 @@
+/*
 package models;
 
 import org.junit.After;
@@ -56,15 +57,15 @@ public class DepartmentTest {
         testDepartment.setNumberOfEmployees(30);
         assertNotEquals(38,  testDepartment.getNumberOfEmployees());
     }
- /*   @Test
+    @Test
     public void getId() {
         Department testDepartment=setupDepartment();
         assertEquals(2,testDepartment.getId());
-    }*/
+    }
     @Test
     public void setId() {
         Department testDepartment= setupDepartment();
         testDepartment.setId(2);
         assertNotEquals(7,  testDepartment.getId());
     }
-}
+}*/

@@ -8,12 +8,13 @@ public class Department {
     private String  depart_name;
     private String description;
     private int numberOfEmployees;
+    private String depart_news;
     private int id;
 
-    public Department(String depart_name,String description){
+    public Department(String depart_name,String description,String depart_news){
         this.depart_name=depart_name;
         this.description=description;
-        this.numberOfEmployees=numberOfEmployees;
+        this.depart_news=depart_news;
     }
 
     public String getDepart_name() {
@@ -28,6 +29,10 @@ public class Department {
     }
     public int getId(){
         return id;
+    }
+
+    public String getDepart_news() {
+        return depart_news;
     }
 
     public void setDepart_name(String depart_name) {
@@ -66,10 +71,11 @@ public class Department {
     }
     public void save() {
         try (Connection con = DB.sql2o.open()) {
-            String sql = "INSERT INTO department (depart_name,description) VALUES (:depart_name,:description);";
+            String sql = "INSERT INTO department (depart_name,description,depart_news) VALUES (:depart_name,:description,:depart_news);";
             this.id = (int) con.createQuery(sql, true)
                     .addParameter("depart_name", this.depart_name)
                     .addParameter("description", this.description)
+                    .addParameter("depart_news", this.depart_news)
             /*        .addParameter("role", this.role)*/
                     .executeUpdate()
                     .getKey();
