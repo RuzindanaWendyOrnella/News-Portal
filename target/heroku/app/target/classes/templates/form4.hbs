@@ -1,0 +1,40 @@
+{{#partial "content"}}
+    {{#if tic}}
+
+        {{#each tic}}
+            <div class="modal-dialog cascading-modal" role="document">
+                <div style="opacity:0.7" class="modal-content">
+
+
+                    <h1 style="font-style:oblique">Tittle</h1>
+                    <p class="two" style="color:black"> {{ about }}</p>
+                    <h1 style="font-style:oblique">Author</h1>
+                     <p style="color:black"> {{ author }}</p>
+                    <h1 style="font-style:oblique">News</h1>
+                 <p style="color:black"> {{ content }}</p>
+
+
+
+                </div>
+            </div>
+        {{/each}}
+    {{else}}
+        <p>No department!</p>
+
+    {{/if}}
+
+{{/partial}}
+<style>
+    body{
+    background-image:url("https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size:cover;
+    background-repeat:no-repeat;
+    }
+    .one{
+    text-align:center;
+     color:white;
+     text-decoration:underline
+
+    }
+</style>
+{{> layout.hbs}}

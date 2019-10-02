@@ -1,0 +1,45 @@
+{{#partial "content"}}
+
+    <div class="whole-page">
+        <div class="modal-dialog cascading-modal" role="document">
+            <h2 style="font-family:sans-serif;color:white;font-style:oblique">ADD General News HERE!</h2>
+            <form action="/general" method="post" >
+                <div class="modal-content">
+                    <div class="modal-header danger-color white-text">
+                    <h4 class="title"><i class="fas fa-folder-plus" data-toggle="modal" data-target="#basicExampleModal"> NEW GENERAl NEWS</i></h4>
+                </div>
+                    <div class="modal-body">
+                        <div class="md-form form-sm">
+                            <i class="fas fa-align-justify">Title</i><br>
+                            <input type="text" name="about" id="about" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fas fa-align-justify">author</i><br>
+                            <input type="text" name="author" id="author" class="form-control form-control-sm" required>
+                        </div>
+                        <div class="md-form form-sm">
+                            <i class="fas fa-align-justify">Content</i><br>
+                            <input type="text" name="content" id="content" class="form-control form-control-sm" required>
+                        </div>
+                        <button type="submit" class="button btn-success">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <style>
+    body{
+    background-image:url("https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size:cover;
+    background-repeat:no-repeat;
+    }
+    .one{
+    text-align:center;
+     color:white;
+     text-decoration:underline
+
+    }
+</style>
+{{/partial}}
+
+{{> layout.hbs}}

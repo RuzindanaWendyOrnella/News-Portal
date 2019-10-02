@@ -1,0 +1,46 @@
+{{#partial "content"}}
+    <h1 class="one" style="font-family:monospace;font-size:500%">Organisational News Portal</h1>
+    <p style="text-align:center;font-family:sans-serif;font-style:oblique;color:white">NB.click on the employee button if you want to fill in your information or the department if you want to fill in the department information.</p>
+    <div style="text-align:center">
+        <button><a href="/posts">Employee</a> </button>
+        <button><a href="/posts2">Department</a> </button>
+    </div>
+
+    <h1 style="font-family:monospace;font-size:500%;color:white;text-align:center">General Company News</h1>
+    <h1 style="color:white;font-size:130%;text-align:center">NB.if you want to learn more about the news click on the tittle name.Thanks!</h1>
+    {{#if gen}}
+
+        {{#each gen}}
+        <div class="modal-dialog cascading-modal" role="document">
+            <div class="modal-content">
+                <h1 style="color:black">Current news:</h1>
+                <a href="/other"><h1 style="font-family:sans-serif;font-style:oblique">Tittle</h1><p class="two" style="color:black"> {{ about }}</p></a>
+            </div>
+        </div>
+        {{/each}}
+    {{else}}
+        <p>No department!</p>
+
+    {{/if}}
+   <!-- </div>-->
+
+    <style>
+    body{
+    background-image:url("https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size:cover;
+    background-repeat:no-repeat;
+    }
+    .one{
+    text-align:center;
+     color:white;
+     text-decoration:underline
+
+    }
+    .two:hover{
+    color:green;
+    }
+</style>
+
+{{/partial}}
+
+{{> layout.hbs}}

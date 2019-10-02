@@ -1,0 +1,33 @@
+{{#partial "content"}}
+
+    <br><br><br><br><br><br>
+    <form style="background-color:black;color:black;opacity:0.7;text-align:center" action="/posts2" method="post">
+        <h1 style="padding-top:1%;color:black;color:white;font-family:sans-serif;font-style:oblique">Department Information</h1>
+         <p style="text-align:center;font-family:sans-serif;font-style:oblique;color:white">
+         NB.please type in a combined letter for the department name or include underscores in place of space or else only the first letter will be displayed
+        </p>
+        <label for="depart_name" style="color:white">  Department Name</label><br>
+        <input id="depart_name" style="color:black" name="depart_name" type="text"><br>
+        <label for="description" style="color:white">Description</label><br>
+        <input id="description" style="color:black" name="description" type="text"><br>
+        <label for="depart_news" style="color:white">Department News</label><br>
+        <input id="depart_news" style="color:black" name="depart_news" type="text"><br>
+        <button type="submit" class="btn btn-default" >Add</button><br>
+    </form>
+
+    <style>
+    body{
+    background-image:url("https://images.pexels.com/photos/372748/pexels-photo-372748.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
+    background-size:cover;
+    background-repeat:no-repeat;
+    }
+    .one{
+    text-align:center;
+     color:white;
+     text-decoration:underline
+
+    }
+</style>
+{{/partial}}
+
+{{> layout.hbs}}
