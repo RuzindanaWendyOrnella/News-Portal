@@ -27,6 +27,7 @@ public class GeneralNews {
     public String getAuthor() {
         return author;
     }
+
     public void save() {
         try (Connection con = DB.sql2o.open()) {
             String sql = "INSERT INTO generalnews (content,about,author) VALUES (:content,:about,:author);";

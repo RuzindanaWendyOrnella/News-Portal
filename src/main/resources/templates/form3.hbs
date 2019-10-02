@@ -1,7 +1,14 @@
 {{#partial "content"}}
     <h1 class="one" style="font-family:monospace;font-size:500%">Organisational News Portal</h1>
    <!-- <div style="background-color:white;opacity:0.7">-->
+    <p style="text-align:center;font-family:sans-serif;font-style:oblique;color:white">NB.click on the employee button if you want to fill in your information or the department if you want to fill in the department information.</p>
+    <div style="text-align:center">
+        <button><a href="/posts">Employee</a> </button>
+        <button><a href="/posts2">Department</a> </button>
+    </div>
+
     <h1 style="font-family:monospace;font-size:500%;color:white;text-align:center">General Company News</h1>
+    <h1 style="color:white;font-size:130%;text-align:center">NB.if you want to learn more about the news click on the tittle name.Thanks!</h1>
     {{#if gen}}
 
         {{#each gen}}
@@ -10,10 +17,12 @@
 
 
 
-                <h1 style="color:black">Current post:</h1>
-                <p style="color:black">Tittle: {{ about }}</p>
-                <p style="color:black">author: {{ author }}</p>
-                 <p style="color:black">News: {{ content }}</p>
+                <h1 style="color:black">Current news:</h1>
+
+
+                <a href="/other"><h1 style="font-family:sans-serif;font-style:oblique">Tittle</h1><p class="two" style="color:black"> {{ about }}</p></a>
+               <!-- <p style="color:black">author: {{ author }}</p>
+                 <p style="color:black">News: {{ content }}</p>-->
 
 
 
@@ -37,6 +46,9 @@
      color:white;
      text-decoration:underline
 
+    }
+    .two:hover{
+    color:green;
     }
 </style>
 

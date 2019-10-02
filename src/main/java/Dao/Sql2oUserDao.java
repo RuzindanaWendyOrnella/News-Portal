@@ -90,14 +90,14 @@ public class Sql2oUserDao implements UserDao {
 
     }
 
-    @Override
-    public void clearAll() {
+    public List<User> clearAll() {
         String sql = "DELETE from userincompany";
         try (Connection con = sql2o.open()) {
             con.createQuery(sql).executeUpdate();
         } catch (Sql2oException ex) {
             System.out.println(ex);
         }
+        return null;
     }
 
     @Override
